@@ -10,10 +10,10 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(path.join(__dirname, 'public')));
 //express routes
 app.get('/', function(req, res){
-  res.sendFile(path.join(__dirname, 'menu.html'));
+  res.sendFile(path.join(__dirname, 'public/menu.html'));
 });
 app.get('/archive', function(req, res){
-  res.sendFile(path.join(__dirname, 'archive.html'));
+  res.sendFile(path.join(__dirname, 'public/archive.html'));
 });
 //express server listen
 var server = app.listen(app.get('port'), function(){
