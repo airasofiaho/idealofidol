@@ -7,16 +7,13 @@ var app = express();
 //set port
 app.set('port', (process.env.PORT || 5000));
 //use static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'trial')));
 //express routes
-app.get('/menu', function(req, res){
+app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, 'menu.html'));
 });
-app.get('/', function(req, res){
+app.get('/archive', function(req, res){
   res.sendFile(path.join(__dirname, 'archive.html'));
-});
-app.get('*', function(req, res){
-  res.status(404).sendFile(path.join(__dirname, 'views/404.html'));
 });
 //express server listen
 var server = app.listen(app.get('port'), function(){
